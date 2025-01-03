@@ -1,0 +1,72 @@
+import express from "express";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+export const app = express();
+app.use(express.json());
+
+app.use("/", (req, res) => {
+  res.status(200).send(`
+      <!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <title>BACKEND TEST</title>
+          <style>
+            body {
+              font-family: Arial, sans-serif;
+              margin: 0;
+              padding: 0;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              min-height: 100vh;
+              background-color: black;
+              color: white;
+              text-align: center;
+            }
+            h1 {
+              font-size: 2.5rem;
+              color: white;
+              margin-bottom: 1rem;
+            }
+            p {
+              font-size: 1.2rem;
+              margin-bottom: 1.5rem;
+            }
+            a {
+              color: #007BFF;
+              text-decoration: none;
+              font-weight: bold;
+            }
+            a:hover {
+              text-decoration: underline;
+            }
+            iframe {
+              margin-top: 20px;
+              border: none;
+            }
+          </style>
+        </head>
+        <body>
+          <h1>Welcome to BACKEND TEST API</h1>
+          <p>
+            If you want to see the API documentation, please click this link: 
+            <br/>
+            <a href="" target="_blank">Postman Documentation</a>
+          </p>
+        </body>
+      </html>
+    `);
+});
+
+app.listen(process.env.PORT || 3000, () => {
+  console.log(`Server running on port ${process.env.PORT || 3000}`);
+  console.log(
+    `Documentation available at http://localhost:${process.env.PORT || 3000}`
+  );
+  console.log("Logger level:", process.env.LOGGER_LEVEL || "info");
+});
