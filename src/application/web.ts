@@ -56,7 +56,7 @@ web.use("/docs", (req, res) => {
         <body>
           <h1>Welcome to BACKEND TEST API Documentation</h1>
           <p>
-            <a href="" target="_blank">Postman Documentation</a>
+            <a href="https://documenter.getpostman.com/view/32137512/2sAYJ99doP" target="_blank">Postman Documentation</a>
           </p>
         </body>
       </html>
