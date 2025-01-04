@@ -6,31 +6,31 @@ TAG=latest
 
 # Build image Docker
 build:
-	docker-compose build
+	docker compose build
 
 # Jalankan container Docker
 up:
-	docker-compose up -d
+	docker compose up -d
 
 # Hentikan dan hapus container Docker
 down:
-	docker-compose down
+	docker compose down
 
 # Jalankan migrasi Prisma
 migrate:
-	docker-compose exec app npx prisma migrate deploy
+	docker compose exec app npx prisma migrate deploy
 
 # Jalankan aplikasi secara manual (menggunakan entrypoint.sh)
 start:
-	docker-compose exec app npm start
+	docker compose exec app npm start
 
 # Cek status container Docker
 status:
-	docker-compose ps
+	docker compose ps
 
 # Hapus semua container, volume, dan network yang ada
 clean:
-	docker-compose down -v --rmi all
+	docker compose down -v --rmi all
 
 # Hentikan aplikasi dan hapus semua container serta volume
 reset: down clean
@@ -53,7 +53,7 @@ logs-db:
 
 # Restart aplikasi Docker
 restart:
-	docker-compose restart app
+	docker compose restart app
 
 # Push Docker image ke DockerHub
 push:
