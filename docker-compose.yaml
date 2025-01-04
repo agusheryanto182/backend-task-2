@@ -5,6 +5,7 @@ services:
     build:
       context: .
     container_name: backend-test-app
+    restart: always
     image: agusheryanto182/backend-test-app:latest
     ports:
       - "3000:3000"
@@ -12,7 +13,8 @@ services:
       - /app/node_modules
       - /app/dist
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     environment:
       DATABASE_URL: ${DATABASE_URL}
       NODE_ENV: development
@@ -26,6 +28,10 @@ services:
     image: mysql:8.0
     container_name: mysql-db
     restart: always
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 30s
+      retries: 10
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: backend_test_db_2
