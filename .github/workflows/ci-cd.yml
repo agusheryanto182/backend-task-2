@@ -71,7 +71,7 @@ jobs:
       - name: Clean up
         run: make clean
 
-      # 10. Deploy to VPS
+      # 10. Deploy to VPS dengan SSH
       - name: Deploy to VPS
         uses: appleboy/ssh-action@master
         with:
