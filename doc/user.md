@@ -37,7 +37,6 @@ Response Body (Error):
 ```json
 {
   "success": false,
-  "message": "Validation errors",
   "errors": {
     "name": "The name field is required."
   }
@@ -125,7 +124,6 @@ Response Body (Error):
 ```json
 {
   "success": false,
-  "message": "Validation errors",
   "errors": {
     "name": "The name field is required."
   }
@@ -157,7 +155,6 @@ Response Body (Error):
 ```json
 {
   "success": false,
-  "message": "not found",
   "errors": "user is not found"
 }
 ```

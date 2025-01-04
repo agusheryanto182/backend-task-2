@@ -4,8 +4,12 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "node dist/index.js",
-    "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/application/web.ts"
+    "start": "node dist/main.js",
+    "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/main.ts",
+    "check-ts": "tsc --noEmit",
+    "build": "tsc",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate deploy"
   },
   "jest": {
     "transform": {
@@ -19,6 +23,7 @@
     "@prisma/client": "^6.1.0",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "morgan": "^1.10.0",
     "winston": "^3.17.0",
     "zod": "^3.24.1"
   },
@@ -27,6 +32,7 @@
     "@babel/preset-typescript": "^7.26.0",
     "@types/express": "^5.0.0",
     "@types/jest": "^29.5.14",
+    "@types/morgan": "^1.9.9",
     "@types/node": "^22.10.5",
     "@types/supertest": "^6.0.2",
     "babel-jest": "^29.7.0",

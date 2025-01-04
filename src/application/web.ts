@@ -1,12 +1,14 @@
 import express from "express";
-import dotenv from "dotenv";
+import { userRoute } from "../route/user.route";
+import { errorMiddleware } from "../middleware/error.middleware";
+import morgan from "morgan";
 
-dotenv.config();
+export const web = express();
+web.use(express.json());
+web.use(morgan(process.env.PRODUCTION === "true" ? "combined" : "dev"));
 
-export const app = express();
-app.use(express.json());
-
-app.use("/", (req, res) => {
+web.use("/api/v1", userRoute);
+web.use("/docs", (req, res) => {
   res.status(200).send(`
       <!DOCTYPE html>
       <html lang="en">
@@ -56,17 +58,11 @@ app.use("/", (req, res) => {
           <p>
             If you want to see the API documentation, please click this link: 
             <br/>
-            <a href="" target="_blank">Postman Documentation</a>
+            <a href="https://documenter.getpostman.com/view/32137512/2sAYJ99doP" target="_blank">Postman Documentation</a>
           </p>
         </body>
       </html>
     `);
 });
 
-app.listen(process.env.PORT || 3000, () => {
-  console.log(`Server running on port ${process.env.PORT || 3000}`);
-  console.log(
-    `Documentation available at http://localhost:${process.env.PORT || 3000}`
-  );
-  console.log("Logger level:", process.env.LOGGER_LEVEL || "info");
-});
+web.use(errorMiddleware);

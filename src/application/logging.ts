@@ -8,7 +8,6 @@ const loggerLevel = process.env.LOGGER_LEVEL?.trim() || "info";
 export const logger = winston.createLogger({
   level: loggerLevel,
   format: winston.format.json(),
-  defaultMeta: { service: "backend-internship-test-2" },
   transports: [
     new winston.transports.Console({
       level: loggerLevel,

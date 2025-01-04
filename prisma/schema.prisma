@@ -16,7 +16,7 @@ datasource db {
 model User {
   id       Int     @id @default(autoincrement())
   name     String  @db.VarChar(100)
-  email    String  @db.VarChar(100)
+  email    String @unique @db.VarChar(100)
   phone    String  @db.VarChar(20)
   active_status   Boolean
   department String @db.VarChar(100)
