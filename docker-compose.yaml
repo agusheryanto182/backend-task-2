@@ -5,6 +5,7 @@ services:
     build:
       context: .
     container_name: backend-test-app
+    image: agusheryanto182/backend-test-app:latest
     restart: always
     ports:
       - "3000:3000"
