@@ -6,12 +6,11 @@ services:
       context: .
     container_name: backend-test-app
     image: agusheryanto182/backend-test-app:latest
-    restart: always
     ports:
       - "3000:3000"
     volumes:
-      - .:/app
       - /app/node_modules
+      - /app/dist
     depends_on:
       - db
     environment:

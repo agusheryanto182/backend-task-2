@@ -1,7 +1,7 @@
 {
   "name": "backend-internship-test-2",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/main.js",
   "scripts": {
     "test": "jest",
     "start": "node dist/main.js",

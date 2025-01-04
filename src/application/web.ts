@@ -54,11 +54,9 @@ web.use("/docs", (req, res) => {
           </style>
         </head>
         <body>
-          <h1>Welcome to BACKEND TEST API</h1>
+          <h1>Welcome to BACKEND TEST API Documentation</h1>
           <p>
-            If you want to see the API documentation, please click this link: 
-            <br/>
-            <a href="https://documenter.getpostman.com/view/32137512/2sAYJ99doP" target="_blank">Postman Documentation</a>
+            <a href="" target="_blank">Postman Documentation</a>
           </p>
         </body>
       </html>
