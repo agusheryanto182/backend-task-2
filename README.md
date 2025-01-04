@@ -5,7 +5,7 @@
 Clone the project
 
 ```bash
-  git clone https://github.com/agusheryanto182/backend-task-2.git
+  git clone https://github.com/agusheryanto182/user-management.git
 ```
 
 Copy `.env.example` file to `.env` file
