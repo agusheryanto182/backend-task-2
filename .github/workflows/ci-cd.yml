@@ -41,23 +41,19 @@ jobs:
         run: |
           sudo apt-get install -y docker-compose
 
-      # 6. Build Docker image menggunakan Makefile
-      - name: Build Docker image
-        run: make build
-
-      # 7. Jalankan Docker container (dalam mode detached)
+      # 6. Build dan jalankan Docker container (dalam mode detached)
       - name: Run Docker containers
         run: make up
 
-      # 8. Push Docker image ke Docker Hub
+      # 7. Push Docker image ke Docker Hub
       - name: Push Docker image to Docker Hub
         run: make push
 
-      # 9. Clean up docker containers and volumes
+      # 8. Clean up docker containers and volumes
       - name: Clean up
         run: make clean
 
-      # 10. Deploy to VPS
+      # 9. Deploy to VPS
       - name: Deploy to VPS
         uses: appleboy/ssh-action@master
         with:
@@ -67,5 +63,5 @@ jobs:
           script: |
             cd /var/repositories/backend-task-2
             git pull origin master
-            docker compose down  
-            docker compose up -d
+            make down
+            make up

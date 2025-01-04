@@ -4,13 +4,9 @@ DB_CONTAINER_NAME=mysql-db
 IMAGE_NAME=agusheryanto182/backend-test-app
 TAG=latest
 
-# Build image Docker
-build:
-	docker compose build
-
 # Jalankan container Docker
 up:
-	docker compose up -d
+	docker compose up --build -d
 
 # Hentikan dan hapus container Docker
 down:
