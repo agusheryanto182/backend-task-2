@@ -28,13 +28,7 @@ Run Testing
 npm run test
 ```
 
-Run docker compose build
-
-```bash
-make build
-```
-
-Run docker compose up
+Build and run
 
 ```bash
 make up
