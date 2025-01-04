@@ -1,6 +1,8 @@
 # Variabel untuk nama container dan service
 CONTAINER_NAME=backend-test-app
 DB_CONTAINER_NAME=mysql-db
+IMAGE_NAME=agusheryanto182/backend-test-app
+TAG=latest
 
 # Build image Docker
 build:
@@ -52,3 +54,8 @@ logs-db:
 # Restart aplikasi Docker
 restart:
 	docker-compose restart app
+
+# Push Docker image ke DockerHub
+push:
+	docker tag $(IMAGE_NAME) $(IMAGE_NAME):$(TAG)
+	docker push $(IMAGE_NAME):$(TAG)
