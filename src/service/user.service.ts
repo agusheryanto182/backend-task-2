@@ -1,5 +1,4 @@
 import { toUserResponse } from "./../model/user.model";
-import { User } from "@prisma/client";
 import { prismaClient } from "../application/database";
 import { ResponseError } from "../error/response.error";
 import {
@@ -62,7 +61,7 @@ export class UserService {
       throw new ResponseError(409, "email is already exists");
     }
 
-    const updatedData: Partial<User> = {};
+    const updatedData: Partial<any> = {};
 
     if (updateUserRequest.name) {
       updatedData.name = updateUserRequest.name;

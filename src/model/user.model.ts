@@ -1,5 +1,3 @@
-import { User } from "@prisma/client";
-
 export type UserResponse = {
   id: number;
   name: string;
@@ -31,7 +29,7 @@ export type GetAllRequest = {
   size: number;
 };
 
-export function toUserResponse(user: User): UserResponse {
+export function toUserResponse(user: any): UserResponse {
   return {
     id: user.id,
     name: user.name,
