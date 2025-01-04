@@ -29,7 +29,7 @@ export type GetAllRequest = {
   size: number;
 };
 
-export function toUserResponse(user: any): UserResponse {
+export function toUserResponse(user: UserResponse): UserResponse {
   return {
     id: user.id,
     name: user.name,
