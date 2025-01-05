@@ -17,9 +17,12 @@ Copy `.env.example` file to `.env` file
 Setting Environmental Variable on `.env` file
 
 ```bash
-DATABASE_URL="mysql://root:@localhost:3306/backend-test-2"
-LOGGER_LEVEL= debug
+DATABASE_URL="mysql://root:password@db:3306/backend_test_db_2"
+LOGGER_LEVEL= error
 PORT=3000
+PRODUCTION=true
+MYSQL_ROOT_PASSWORD=password
+MYSQL_DATABASE=backend_test_db_2
 ```
 
 Run Testing
