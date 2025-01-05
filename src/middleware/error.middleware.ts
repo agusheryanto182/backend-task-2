@@ -11,7 +11,7 @@ export const errorMiddleware = async (
   if (error instanceof ZodError) {
     res.status(400).json({
       success: false,
-      errors: error.issues,
+      errors: error.issues.map((issue) => issue.message),
     });
   } else if (error instanceof ResponseError) {
     res.status(error.status).json({
