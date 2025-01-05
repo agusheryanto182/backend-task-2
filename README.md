@@ -17,7 +17,12 @@ Copy `.env.example` file to `.env` file
 Setting Environmental Variable on `.env` file
 
 ```bash
+# configuration when using docker
 DATABASE_URL="mysql://root:password@db:3306/backend_test_db_2"
+
+# configuration for development and testing
+# DATABASE_URL="mysql://root:password@localhost:3306/backend_test_db_2"
+
 LOGGER_LEVEL= error
 PORT=3000
 PRODUCTION=true
@@ -25,13 +30,13 @@ MYSQL_ROOT_PASSWORD=password
 MYSQL_DATABASE=backend_test_db_2
 ```
 
-Run Testing
+Run testing
 
 ```bash
 npm run test
 ```
 
-Build and run
+Build and run the project using docker
 
 ```bash
 make up
